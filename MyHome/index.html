@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KDH GUN SHOP | 완벽한 작전을 위한 최상급 무기고</title>
+  <meta name="description" content="김도현 건 샵 - 완벽한 작전을 연결하는 더 스마트한 전술 무기고. 암호화 보안 노드를 통한 은밀하고 안전한 프리미엄 조달 솔루션.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 전술 인트로/세션 로딩 오버레이 -->
+  <div id="loading-overlay" class="loading-overlay">
+    <div class="terminal-loader">
+      <div class="terminal-header">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <span class="terminal-title">INITIALIZING SECURE SESSION...</span>
+      </div>
+      <div class="terminal-body" id="loading-terminal-text">
+        <p class="term-line">> ESTABLISHING VPN TUNNEL...</p>
+        <p class="term-line">> ROUTING VIA ONION ROUTER...</p>
+        <p class="term-line">> DECRYPTING HANDSHAKE PACKETS...</p>
+        <p class="term-line">> SECURE SESSION ESTABLISHED [NODE: KDH_ARMORY_0x9A]</p>
+      </div>
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="load-progress"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 헤더 & GNB -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="#home" class="logo-link">
+        <div class="logo-wrapper">
+          <img src="Images/logo.png" alt="KDH GUN SHOP" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <span class="logo-fallback" style="display:none;">KDH GUN SHOP</span>
+        </div>
+      </a>
+      
+      <!-- 실시간 서버 가동 상태등 -->
+      <div class="status-indicator">
+        <span class="status-dot blinking"></span>
+        <span class="status-text text-mono">SECURE_NODE.ONION</span>
+      </div>
+
+      <!-- 모바일 햄버거 버튼 -->
+      <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="메뉴 열기">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <!-- 네비게이션 메뉴 -->
+      <nav class="nav-menu" id="nav-menu">
+        <ul>
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- 사용자 유틸리티 (포인트 & 장바구니) -->
+      <div class="header-utils">
+        <div class="wallet-widget text-mono" id="wallet-trigger">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M12 12h.01M16 12h.01M8 12h.01"/></svg>
+          <span class="wallet-label">CREDITS:</span>
+          <span class="wallet-balance" id="wallet-credits">₩ 5,000,000</span>
+        </div>
+        <div class="cart-widget text-mono" id="cart-trigger">
+          <div class="cart-icon-wrapper">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span class="cart-count" id="cart-count">0</span>
+          </div>
+        </div>
+        <a href="#contact" class="btn-inquire text-mono">SECURE INQUIRY</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 메인 콘텐츠 영역 -->
+  <main>
+    
+    <!-- Hero Section (Home) -->
+    <section id="home" class="hero-section scroll-section">
+      <div class="radial-glow"></div>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="badge-terminal text-mono">CONNECTED TO SECURE PORT // 8f3c92a1</div>
+          <h1 class="hero-title">
+            완벽한 작전을 연결하는<br>
+            <span class="text-highlight">더 스마트한 전술 무기고</span>
+          </h1>
+          <p class="hero-description">
+            KDH GUN SHOP은 기업 및 요원들이 전술 하드웨어 기술을 더 쉽고 빠르게 도입할 수 있도록 돕는 프리미엄 조달 솔루션 기업입니다. 혹독한 전장 속에서도 무결점을 보증합니다.
+          </p>
+          <div class="hero-buttons">
+            <a href="#services" class="btn-primary text-mono">서비스 알아보기</a>
+            <a href="#contact" class="btn-secondary text-mono">비밀 문의하기</a>
+          </div>
+          <!-- 실시간 전술 터미널 -->
+          <div class="hero-terminal text-mono">
+            <div class="term-head">
+              <span class="term-status-dot"></span>
+              <span>LIVE LOG STREAM</span>
+            </div>
+            <div class="term-lines" id="hero-log-lines">
+              <p class="term-log-line text-dim">[14:02:41] SECURITY HANDSHAKE COMPLETED.</p>
+              <p class="term-log-line">[14:02:42] FETCHING ACTIVE BLUEPRINTS...</p>
+              <p class="term-log-line text-green">[14:02:43] KDH_NODE ACTIVE ON ENCRYPTED GRID.</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="visual-wrapper">
+            <img src="Images/men.png" alt="Tactical Operative" class="hero-character-img" onerror="this.src='https://images.unsplash.com/photo-1595590424283-b8f17842773f?auto=format&fit=crop&q=80&w=800';">
+            <div class="visual-grid-overlay"></div>
+            <div class="neon-frame-glow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section scroll-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle text-mono">01 // IDENTITY</span>
+          <h2 class="section-title">About KDH GUN SHOP</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-visual">
+            <div class="about-img-container">
+              <img src="Images/main_banner2.png" alt="Armory Interior" class="about-banner-img" onerror="this.src='https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80&w=1200';">
+              <div class="visual-scanline"></div>
+              <div class="image-overlay-text text-mono">ARMORY AREA // B-03</div>
+            </div>
+          </div>
+          <div class="about-content">
+            <h3 class="about-heading">기업과 요원의 한계를 극복하는 전술 동반자</h3>
+            <p class="about-text">
+              KDH GUN SHOP은 단순한 화기 유통을 넘어 기업과 요원의 작전 효율화와 전술적 전환을 전방위적으로 지원하는 전술 솔루션 전문 기업입니다. 
+              우리는 고정밀 데이터 분석을 기반으로 한 화기 맞춤형 커스텀, 완전성 위주의 자동화 조달 시스템, 그리고 위도·경도 암호화 좌표 기반 배송 체계를 통해 가혹한 환경 속에서도 요원의 신뢰성과 안전을 최고치로 끌어올립니다.
+            </p>
+            
+            <!-- 핵심 가치 3대 카드 -->
+            <div class="value-cards-grid">
+              <div class="value-card">
+                <div class="value-icon-wrapper">
+                  <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <h4 class="value-title text-mono">INNOVATION</h4>
+                <p class="value-desc">새로운 기술 및 공법 적용을 통한 전술적 파괴력과 기동성 혁신</p>
+              </div>
+              <div class="value-card">
+                <div class="value-icon-wrapper">
+                  <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
+                <h4 class="value-title text-mono">EFFICIENCY</h4>
+                <p class="value-desc">가혹 조건 하 작동 신뢰성 확보 및 정밀 정비 프로세스 자동화</p>
+              </div>
+              <div class="value-card">
+                <div class="value-icon-wrapper">
+                  <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 6l-9.5 9.5-5-5L1 18"/></svg>
+                </div>
+                <h4 class="value-title text-mono">GROWTH</h4>
+                <p class="value-desc">안전망 확보를 통한 작전 요원의 손실율 최소화 및 미션 성공률 향상</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section scroll-section">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-subtitle text-mono">02 // STRATEGIC ASSISTANCE</span>
+          <h2 class="section-title">Our Services</h2>
+          <p class="section-description">요원의 기밀 작전 및 보급을 지원하기 위해 구축된 6가지 전술 서비스 모듈입니다.</p>
+        </div>
+        <div class="services-grid">
+          <!-- 카드 1 -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+            </div>
+            <h3 class="service-card-title">맞춤형 모듈 커스텀</h3>
+            <p class="service-card-desc">작전지의 습도, 기온, 교전 거리를 분석하여 하부 리시버부터 배럴, 옵틱 시스템까지 최적화된 튜닝 빌드를 설계합니다.</p>
+            <div class="service-card-glow"></div>
+          </div>
+          <!-- 카드 2 -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3 class="service-card-title">보안 좌표 배송</h3>
+            <p class="service-card-desc">기존 물류 시스템이 아닌 위도와 경도로 이루어진 암호화 좌표에 익명망 분산 팩을 통해 안전하게 비밀 배송을 지원합니다.</p>
+            <div class="service-card-glow"></div>
+          </div>
+          <!-- 카드 3 -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M12 12h.01M16 12h.01M8 12h.01"/></svg>
+            </div>
+            <h3 class="service-card-title">크레딧 보상 지갑</h3>
+            <p class="service-card-desc">조달 계약 및 작전 피드백 완료 시 암호화 크레딧(KDH Credit)을 즉시 지급하여 재장전을 위한 자산의 영속성을 제공합니다.</p>
+            <div class="service-card-glow"></div>
+          </div>
+          <!-- 카드 4 -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 11H5m14 0a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2m14 0V9a2 2 0 0 0-2-2M5 11V9a2 2 0 0 1 2-2m0 0V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2M7 7h10"/></svg>
+            </div>
+            <h3 class="service-card-title">흔적 없는 이력 삭제</h3>
+            <p class="service-card-desc">보급된 전술 장비에 고정밀 레이저 박리 및 각인 시스템을 적용하여 생산 국가 및 출처에 대한 이력을 완벽히 소거합니다.</p>
+            <div class="service-card-glow"></div>
+          </div>
+          <!-- 카드 5 -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="service-card-title">특수 작전 장비 지원</h3>
+            <p class="service-card-desc">야간 은밀 침투에 필수적인 4안식 야간 투시경, 열화상 열전 탐지 렌즈, 전술 방탄 플레이트 등 최상급 보조 장비를 지원합니다.</p>
+            <div class="service-card-glow"></div>
+          </div>
+          <!-- 카드 6 -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3 class="service-card-title">탄약 정기 조달 대행</h3>
+            <p class="service-card-desc">5.56mm NATO, 9mm Parabellum 등 실전 교전 빈도가 높은 규격별 훈련용/실전용 고성능 화약을 대량 정기 조달합니다.</p>
+            <div class="service-card-glow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio & Market Section -->
+    <section id="portfolio" class="portfolio-section scroll-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle text-mono">03 // ARMAMENT BLUEPRINTS</span>
+          <h2 class="section-title">Armory Portfolio</h2>
+          <p class="section-description">엄격한 사격 검증과 이력 소거가 마감된 프리미엄 조달 화기 목록입니다.</p>
+        </div>
+
+        <!-- 필터 컨트롤러 -->
+        <div class="filter-controls text-mono">
+          <button class="filter-btn active" data-filter="all">ALL BRANDS</button>
+          <button class="filter-btn" data-filter="assault">ASSAULT RIFLE</button>
+          <button class="filter-btn" data-filter="handgun">HANDGUN</button>
+          <button class="filter-btn" data-filter="shotgun">SHOTGUN</button>
+          <button class="filter-btn" data-filter="sniper">SNIPER RIFLE</button>
+        </div>
+
+        <!-- 무기 리스트 그리드 -->
+        <div class="weapons-grid" id="weapons-grid">
+          
+          <!-- 무기 카드 1 -->
+          <div class="weapon-card" data-category="assault">
+            <div class="weapon-img-wrapper">
+              <!-- 실제 이미지가 없으므로 onerror에서 fallback 트리거됨 -->
+              <img src="Images/close-up-rifle.jpg" alt="M4A1 Reaper" class="weapon-img" onerror="handleImageLoadError(this, 'M4A1');">
+              <span class="badge-category text-mono">ASSAULT RIFLE</span>
+            </div>
+            <div class="weapon-info">
+              <h3 class="weapon-name">M4A1 Reaper 전술 소총</h3>
+              <p class="weapon-spec">🎯 5.56mm NATO 표준 호환 / 근접 및 중거리 전천후 교전에 최적화된 리시버 적용</p>
+              <div class="weapon-price-row">
+                <span class="price-label text-mono">VALUATION:</span>
+                <span class="price-value text-mono">₩ 1,450,000</span>
+              </div>
+              <button class="btn-add-cart text-mono" onclick="addToCart('M4A1 Reaper', 1450000, 'assault')">ADD TO PROCUREMENT</button>
+            </div>
+          </div>
+
+          <!-- 무기 카드 2 -->
+          <div class="weapon-card" data-category="handgun">
+            <div class="weapon-img-wrapper">
+              <img src="Images/glock19.jpg" alt="Glock 19 Skull" class="weapon-img" onerror="handleImageLoadError(this, 'GLOCK19');">
+              <span class="badge-category text-mono">HANDGUN</span>
+            </div>
+            <div class="weapon-info">
+              <h3 class="weapon-name">Glock 19 Skull 부무장 권총</h3>
+              <p class="weapon-spec">🎯 9mm Parabellum / 슬라이드 경량 가공을 통한 연사 시 제어력 극대화</p>
+              <div class="weapon-price-row">
+                <span class="price-label text-mono">VALUATION:</span>
+                <span class="price-value text-mono">₩ 850,000</span>
+              </div>
+              <button class="btn-add-cart text-mono" onclick="addToCart('Glock 19 Skull', 850000, 'handgun')">ADD TO PROCUREMENT</button>
+            </div>
+          </div>
+
+          <!-- 무기 카드 3 -->
+          <div class="weapon-card" data-category="shotgun">
+            <div class="weapon-img-wrapper">
+              <img src="Images/mossberg590.jpg" alt="Mossberg 590" class="weapon-img" onerror="handleImageLoadError(this, 'MOSSBERG590');">
+              <span class="badge-category text-mono">SHOTGUN</span>
+            </div>
+            <div class="weapon-info">
+              <h3 class="weapon-name">Mossberg 590 Tactical 산탄총</h3>
+              <p class="weapon-spec">🎯 12 Gauge Shell / 근접 대인 저지력 및 시가전 격벽 파괴 목적의 강력한 화력</p>
+              <div class="weapon-price-row">
+                <span class="price-label text-mono">VALUATION:</span>
+                <span class="price-value text-mono">₩ 1,200,000</span>
+              </div>
+              <button class="btn-add-cart text-mono" onclick="addToCart('Mossberg 590 Tactical', 1200000, 'shotgun')">ADD TO PROCUREMENT</button>
+            </div>
+          </div>
+
+          <!-- 무기 카드 4 -->
+          <div class="weapon-card" data-category="assault">
+            <div class="weapon-img-wrapper">
+              <img src="Images/ak47.jpg" alt="AK-47 Classic" class="weapon-img" onerror="handleImageLoadError(this, 'AK47');">
+              <span class="badge-category text-mono">ASSAULT RIFLE</span>
+            </div>
+            <div class="weapon-info">
+              <h3 class="weapon-name">AK-47 클래식 복원 스펙</h3>
+              <p class="weapon-spec">🎯 7.62x39mm M43 / 사막, 한대 지역 등 가혹한 가혹 환경 동작성 보증 복원</p>
+              <div class="weapon-price-row">
+                <span class="price-label text-mono">VALUATION:</span>
+                <span class="price-value text-mono">₩ 1,100,000</span>
+              </div>
+              <button class="btn-add-cart text-mono" onclick="addToCart('AK-47 클래식 복원', 1100000, 'assault')">ADD TO PROCUREMENT</button>
+            </div>
+          </div>
+
+          <!-- 무기 카드 5 -->
+          <div class="weapon-card" data-category="sniper">
+            <div class="weapon-img-wrapper">
+              <img src="Images/awm.jpg" alt="AWM" class="weapon-img" onerror="handleImageLoadError(this, 'AWM');">
+              <span class="badge-category text-mono">SNIPER RIFLE</span>
+            </div>
+            <div class="weapon-info">
+              <h3 class="weapon-name">AWM 초정밀 저격 라이플</h3>
+              <p class="weapon-spec">🎯 .338 Lapua Magnum / 1.5km 초장거리 대인 저격 전용 고성능 사격 모듈</p>
+              <div class="weapon-price-row">
+                <span class="price-label text-mono">VALUATION:</span>
+                <span class="price-value text-mono">₩ 3,500,000</span>
+              </div>
+              <button class="btn-add-cart text-mono" onclick="addToCart('AWM 초정밀 저격 라이플', 3500000, 'sniper')">ADD TO PROCUREMENT</button>
+            </div>
+          </div>
+
+          <!-- 무기 카드 6 -->
+          <div class="weapon-card" data-category="handgun">
+            <div class="weapon-img-wrapper">
+              <img src="Images/beretta.jpg" alt="Beretta M9" class="weapon-img" onerror="handleImageLoadError(this, 'BERETTA');">
+              <span class="badge-category text-mono">HANDGUN</span>
+            </div>
+            <div class="weapon-info">
+              <h3 class="weapon-name">Beretta M9 고스트 에디션</h3>
+              <p class="weapon-spec">🎯 9mm Parabellum / 내마모 특수 세라코트 도금 및 특수 작전용 저소음 배럴 채택</p>
+              <div class="weapon-price-row">
+                <span class="price-label text-mono">VALUATION:</span>
+                <span class="price-value text-mono">₩ 750,000</span>
+              </div>
+              <button class="btn-add-cart text-mono" onclick="addToCart('Beretta M9 고스트 에디션', 750000, 'handgun')">ADD TO PROCUREMENT</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- How We Work Section -->
+    <section class="process-section">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-subtitle text-mono">04 // OPERATIONAL TIMELINE</span>
+          <h2 class="section-title">How We Work</h2>
+          <p class="section-description">안전하고 신속하게 정밀 조달 계약이 이행되는 5단계 전술 프로세스입니다.</p>
+        </div>
+        
+        <div class="process-timeline">
+          <!-- Step 1 -->
+          <div class="process-step">
+            <div class="step-num text-mono">01</div>
+            <div class="step-content">
+              <h3 class="step-title">상담 및 요구분석</h3>
+              <p class="step-desc">요원이 임무를 수행할 작전지의 가혹 조건 및 화력전 스펙 요건을 판정합니다.</p>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="process-step">
+            <div class="step-num text-mono">02</div>
+            <div class="step-content">
+              <h3 class="step-title">기획 및 파츠 매칭</h3>
+              <p class="step-desc">배럴 하우징, 인체공학 피스톨 그립 및 총기 이력 삭제 설계도를 확정합니다.</p>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="process-step">
+            <div class="step-num text-mono">03</div>
+            <div class="step-content">
+              <h3 class="step-title">정밀 튜닝 및 가공</h3>
+              <p class="step-desc">실제 정밀 파츠의 조립과 하부 리시버 CNC 공정, 경량화 레이저 커팅을 진행합니다.</p>
+            </div>
+          </div>
+          <!-- Step 4 -->
+          <div class="process-step">
+            <div class="step-num text-mono">04</div>
+            <div class="step-content">
+              <h3 class="step-title">가혹 영점 테스트</h3>
+              <p class="step-desc">사격 터널 내에서 1,000발 이상의 연속 영점 사격 및 탄도 계측 신뢰도를 검증합니다.</p>
+            </div>
+          </div>
+          <!-- Step 5 -->
+          <div class="process-step">
+            <div class="step-num text-mono">05</div>
+            <div class="step-content">
+              <h3 class="step-title">암호 배송 지원</h3>
+              <p class="step-desc">좌표를 위도/경도로 분할하여 추적이 차단된 물류 배송망을 통해 지정 포인터에 인도합니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trusted by Operatives & Stats Section -->
+    <section class="stats-section">
+      <div class="container stats-grid">
+        <div class="stats-counter-panel">
+          <div class="stat-box">
+            <div class="stat-number text-mono" data-target="1200">0</div>
+            <div class="stat-label text-mono">ACTIVE CONTRACTS</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number text-mono" data-target="99.9" data-decimals="1">0</div>
+            <div class="stat-label text-mono">RELIABILITY (%)</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number text-mono" data-target="45">0</div>
+            <div class="stat-label text-mono">WEIGHT SAVINGS (%)</div>
+          </div>
+        </div>
+        
+        <div class="feedback-panel">
+          <span class="panel-subtitle text-mono">// TRUSTED BY OPERATIVES</span>
+          <h3 class="panel-title">전장 요원들의 익명 통신 로그</h3>
+          <div class="feedback-carousel">
+            <div class="feedback-card">
+              <div class="feedback-quote">
+                “KDH 건샵의 경량화 리시버와 이력 삭제 솔루션 도입 후 아덴만 야간 침투 작전 시 화기 장애율이 0%로 떨어졌습니다. 신속하고 안전한 익명망 배송 덕분에 작전 준비 시간이 극적으로 단축되었습니다.”
+              </div>
+              <div class="feedback-author text-mono">▶ OPERATOR_0x7B [VERIFIED]</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact-section scroll-section">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <span class="section-subtitle text-mono">05 // SECURE TRANSMISSION</span>
+          <h2 class="section-title">Contact Us</h2>
+          <p class="contact-description">
+            의뢰서 및 보급 문의 내역은 SSL 및 PGP 기반 세션으로 격리 및 분산 처리되며, 수신 즉시 이력 소거 보안 디바이스로 라우팅됩니다. 
+          </p>
+          <div class="info-list text-mono">
+            <div class="info-item">
+              <span class="info-label">E-MAIL:</span>
+              <span class="info-value">kdh_armory_node@secure_onion.net</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">COMMUNICATION:</span>
+              <span class="info-value">+82 (0)10-XXXX-KDH7</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">COORDINATES:</span>
+              <span class="info-value">SECURE COORDINATES SENT UPON CONFIRMATION</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">AVAILABILITY:</span>
+              <span class="info-value">24 / 7 / 365 OPERATIONAL</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 보안 전송 양식 -->
+        <div class="contact-form-panel">
+          <div class="panel-header text-mono">
+            <span class="header-dot"></span>
+            <span>SECURE INQUIRY CHANNEL</span>
+          </div>
+          <form id="secure-inquiry-form" class="contact-form">
+            <div class="form-group">
+              <label for="operator-id" class="text-mono">OPERATOR ID (성함)</label>
+              <input type="text" id="operator-id" required placeholder="ex) AGENT_KDH" class="form-input text-mono">
+            </div>
+            <div class="form-group">
+              <label for="reply-coordinate" class="text-mono">REPLY COORDINATE (이메일)</label>
+              <input type="email" id="reply-coordinate" required placeholder="ex) agent@securemail.com" class="form-input text-mono">
+            </div>
+            <div class="form-group">
+              <label for="request-log" class="text-mono">REQUEST LOG (문의 상세 내역)</label>
+              <textarea id="request-log" required placeholder="보급 또는 튜닝 의뢰 내역을 암호화하여 기록하십시오..." class="form-input text-mono" rows="6"></textarea>
+            </div>
+            <button type="submit" class="btn-submit text-mono" id="btn-submit-form">
+              <span class="btn-text">SEND SECURE PACKET</span>
+              <span class="loading-ring" style="display:none;"></span>
+            </button>
+          </form>
+
+          <!-- 문의 폼 터미널 디버그창 -->
+          <div class="form-terminal text-mono" id="form-terminal-output" style="display:none;">
+            <p class="term-log-line text-green">> CONNECTING TO KDH_INBOUND_GATEWAY...</p>
+            <p class="term-log-line">> SERIALIZING PACKET...</p>
+            <p class="term-log-line">> ENCRYPTING PGP KEY: [0x78A3F9]...</p>
+            <p class="term-log-line">> DISPATCHING TO 3 SECURE TARGET HOPS...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3 class="footer-logo text-mono">KDH GUN SHOP</h3>
+        <p class="footer-tagline">가장 가혹한 구역 속 요원들의 목숨을 담보하는 신뢰의 무기고.</p>
+        <span class="text-mono text-dim font-xs">SERVER_LATENCY: 14ms // STATUS: OPERATIONAL</span>
+      </div>
+      <div class="footer-links">
+        <h4 class="footer-title text-mono">NAVIGATION</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-security">
+        <h4 class="footer-title text-mono">SECURITY LOG</h4>
+        <p class="text-dim text-mono font-xs">
+          ALL INBOUND/OUTBOUND CONNECTIONS ARE MONITORED. IP LEAKS PREVENTED VIA SECURE SANDBOX TUNNEL. PGP SIGNATURE VALID.
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-flex text-mono">
+        <span>© 2026 KDH Gun Shop. All rights reserved.</span>
+        <span>LAT: 37.5665° N / LON: 126.9780° E [HQ COORD]</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 장바구니 모달 -->
+  <div class="modal" id="cart-modal">
+    <div class="modal-content glass-panel">
+      <div class="modal-header">
+        <h3 class="modal-title text-mono">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg>
+          PROCUREMENT CART
+        </h3>
+        <button class="modal-close" id="cart-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="cart-items" id="cart-items-container">
+          <!-- 장바구니 아이템 동적 주입 -->
+          <p class="empty-message text-mono">No tactical gear selected. Cart is empty.</p>
+        </div>
+        <div class="cart-summary-box">
+          <div class="summary-row text-mono">
+            <span>SUBTOTAL:</span>
+            <span id="cart-subtotal">₩ 0</span>
+          </div>
+          <div class="summary-row text-mono highlight">
+            <span>ESTIMATED POINTS:</span>
+            <span id="cart-estimated-points">0 PTS</span>
+          </div>
+        </div>
+        <!-- 지갑 잔액 표시 및 결제 -->
+        <div class="wallet-status-bar text-mono">
+          <span>WALLET BALANCE:</span>
+          <span class="wallet-balance-highlight" id="modal-wallet-balance">₩ 5,000,000</span>
+        </div>
+        <button class="btn-checkout text-mono" id="btn-checkout" onclick="executeProcurement()">EXECUTE PROCUREMENT CONTRACT</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 결제 승인 완료 모달 -->
+  <div class="modal" id="success-modal">
+    <div class="modal-content success-panel text-center">
+      <div class="success-icon-wrapper">
+        <svg class="success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <h3 class="success-title text-mono">PROCUREMENT CONTRACT SEALED</h3>
+      <p class="success-desc">
+        계약이 체결되었습니다. 크레딧 결제가 완료되었으며, 이력 소거 장비 튜닝 작업이 큐에 추가되었습니다.
+      </p>
+      <div class="success-details text-mono">
+        <p>ORDER ID: <span id="success-order-id">ORD-XXXXXXXX</span></p>
+        <p>REMAINING CREDITS: <span id="success-wallet-balance">₩ 0</span></p>
+      </div>
+      <button class="btn-success-close text-mono" onclick="closeSuccessModal()">DISMISS SECURE PANEL</button>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="main.js"></script>
+</body>
+</html>
